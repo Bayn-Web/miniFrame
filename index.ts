@@ -1,0 +1,22 @@
+import { startEngine, html, data, createEffect, css } from "./lib/index"
+// Tying it all together
+
+data.color = 'blue'
+data.a = 1;
+
+createEffect(() => {
+    data.textColor = data.color === 'blue' ? 'red' : 'blue'
+})
+
+startEngine(function render() {
+    return html`<div class="${data.color}"><div class="${data.textColor}" id='my'>${data.color}</div>${data.a}</div>`
+})
+
+css`
+   .blue {
+        color: blue;
+    }
+    .red {
+        color: ${data.textColor};
+    }
+`
