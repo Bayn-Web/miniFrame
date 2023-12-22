@@ -1,4 +1,4 @@
-import { startEngine, html, data, createEffect, css } from "./lib/index"
+import { startEngine, html, data, createEffect, css, makeFunc } from "./lib/index"
 // Tying it all together
 
 data.color = 'blue'
@@ -9,7 +9,15 @@ createEffect(() => {
 })
 
 startEngine(function render() {
-    return html`<div class="${data.color}"><div class="${data.textColor}" id='my'>${data.color}</div>${data.a}</div>`
+    return html`
+    <div class="${data.color}">
+        <div class="${data.textColor}" id='my'>
+            ${data.color}
+        </div>
+        ${data.a}
+        <button onclick="switchColor()">switchColor</button>
+    </div>
+    `
 })
 
 css`
@@ -19,4 +27,8 @@ css`
     .red {
         color: ${data.textColor};
     }
-`
+`;
+
+makeFunc('switchColor', () => {
+    data.color = 'red'
+})
