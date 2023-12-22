@@ -8,14 +8,16 @@ let renderFunc: Function | undefined = undefined;
  * @param render - The render function
  * @param el - The element to render to
 */
-const startEngine = (render: () => Element, el?: string) => {
+const startEngine = (render: () => [Element, HTMLStyleElement], el?: string) => {
     container = el ? document.querySelector(el)! : document.getElementById('container')!
     createEffect(() => {
         renderFunc = render
         if (container!.firstElementChild) {
-            container!.firstElementChild.replaceWith(renderFunc())
+            container!.childNodes.forEach(child => child.remove())
+            container!.firstElementChild.replaceWith(renderFunc()[0], renderFunc()[1])
         } else {
-            container!.appendChild(renderFunc())
+            container!.appendChild(renderFunc()[0])
+            container!.appendChild(renderFunc()[1])
         }
     })
 }

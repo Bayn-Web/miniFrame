@@ -3,15 +3,19 @@ const dirtyEffects: any = []
 let queued = false
 let currentEffect: Function | undefined = undefined;
 
+type data = {
+    [key: string]: string | number
+}
+
 /**
  * @description reative data, can refresh dom.
 */
-const data: any = new Proxy(({} as any), {
-    get(obj, prop) {
+const data: data = new Proxy({} as data, {
+    get(obj, prop: string) {
         onGet(prop)
         return obj[prop]
     },
-    set(obj, prop, value) {
+    set(obj, prop: string, value) {
         obj[prop] = value
         onSet(prop)
         return true

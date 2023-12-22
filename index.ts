@@ -9,34 +9,38 @@ createEffect(() => {
 })
 
 startEngine(function render() {
-    return html`
-    <div class="${data.color}">
-        <div class="${data.textColor}" id='my'>
-            ${data.color}
+    return [html`
+    <div>
+        <div class="${data.color}">
+            color:${data.color}
         </div>
-        ${data.a}
+        <div class="${data.textColor}">
+            color:${data.textColor}
+        </div>
+        <label>
+            <div class="round">    
+            </div>
+        </label>
         <button onclick="switchColor()">switchColor</button>
     </div>
-    `
+    `,
+    css`
+    .blue {
+         color: ${data.color};
+     }
+     .red {
+         color: ${data.textColor};
+     }
+     .round {
+         background: radial-gradient(#e66465, ${data.textColor});
+         height: 100px;
+         width: 100px;
+         border-radius: 50%;
+     }
+ `]
 })
 
-css`
-   .blue {
-        color: blue;
-    }
-    .red {
-        color: ${data.textColor};
-    }
-`;
 
 makeFunc('switchColor', () => {
-    data.color = 'red'
+    data.color = data.color == 'red' ? 'blue' : 'red';
 })
-
-setTimeout(() => {
-    css`
-        .blue {
-            display: none;
-        }
-`;
-}, 5000);

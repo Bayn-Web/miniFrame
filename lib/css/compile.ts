@@ -5,7 +5,7 @@ import { container } from "../engine";
  * @param tokens TemplateStringsArray
  * @param expressions (string|number)[]
 */
-function transcss2dom(tokens: TemplateStringsArray, ...expressions: (string | number)[]) {
+function css(tokens: TemplateStringsArray, ...expressions: (string | number)[]) {
     const cssString = tokens.map((token, index) => {
         return (expressions[index - 1] ?? '') + token;
     }).join('');
@@ -13,10 +13,6 @@ function transcss2dom(tokens: TemplateStringsArray, ...expressions: (string | nu
     let styleDom = document.createElement('style')
     styleDom.textContent = cssString;
     return styleDom;
-}
-
-const css = (tokens: TemplateStringsArray, ...expressions: (string | number)[]) => {
-    container?.appendChild(transcss2dom(tokens, ...expressions))
 }
 
 export {
