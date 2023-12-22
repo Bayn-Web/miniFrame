@@ -32,3 +32,11 @@ css`
 makeFunc('switchColor', () => {
     data.color = 'red'
 })
+
+setTimeout(() => {
+    css`
+        .blue {
+            display: none;
+        }
+`;
+}, 5000);
