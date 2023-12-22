@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@bayn/miniframe':
+    specifier: 0.0.1-beta.2
+    version: 0.0.1-beta.2
   typescript:
     specifier: ^5.3.3
     version: 5.3.3
@@ -13,6 +16,21 @@ dependencies:
     version: 5.0.10
 
 packages:
+
+  /@bayn/miniframe@0.0.1-beta.2:
+    resolution: {integrity: sha512-P+vYILHHGbLLxzDGbTZGLGWsD6taTR7ZJN1036x4aLK8fsKOi0JdnmSc8cxfcgBzApDrRxGPa/3eyKs1JsdQjQ==}
+    dependencies:
+      typescript: 5.3.3
+      vite: 5.0.10
+    transitivePeerDependencies:
+      - '@types/node'
+      - less
+      - lightningcss
+      - sass
+      - stylus
+      - sugarss
+      - terser
+    dev: false
 
   /@esbuild/aix-ppc64@0.19.10:
     resolution: {integrity: sha512-Q+mk96KJ+FZ30h9fsJl+67IjNJm3x2eX+GBWGmocAKgzp27cowCOOqSdscX80s0SpdFXZnIv/+1xD1EctFx96Q==}

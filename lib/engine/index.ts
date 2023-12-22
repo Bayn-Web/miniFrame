@@ -1,7 +1,6 @@
 import { createEffect } from "../reactive/data";
 
 let container: Element | undefined = undefined
-let renderFunc: Function | undefined = undefined;
 
 /**
  * Start the engine
@@ -11,13 +10,13 @@ let renderFunc: Function | undefined = undefined;
 const startEngine = (render: () => [Element, HTMLStyleElement], el?: string) => {
     container = el ? document.querySelector(el)! : document.getElementById('container')!
     createEffect(() => {
-        renderFunc = render
+        let dom = render()
         if (container!.firstElementChild) {
             container!.childNodes.forEach(child => child.remove())
-            container!.firstElementChild.replaceWith(renderFunc()[0], renderFunc()[1])
+            container!.firstElementChild.replaceWith(dom[0], dom[1])
         } else {
-            container!.appendChild(renderFunc()[0])
-            container!.appendChild(renderFunc()[1])
+            container!.appendChild(dom[0])
+            container!.appendChild(dom[1])
         }
     })
 }

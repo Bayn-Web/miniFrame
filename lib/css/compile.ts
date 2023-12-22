@@ -1,5 +1,3 @@
-import { container } from "../engine";
-
 /**
  * @description Render css
  * @param tokens TemplateStringsArray

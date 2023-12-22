@@ -1,15 +1,23 @@
 {
-  "name": "miniframe",
-  "version": "1.0.0",
+  "name": "@bayn/miniframe",
+  "version": "0.0.1-beta.2",
+  "repository": "https://github.com/Bayn-Web/miniFrame",
   "description": "",
-  "main": "index.ts",
+  "type": "module",
+  "types": "./lib/package.d.ts",
+  "module": "./lib/index.ts",
   "scripts": {
-    "dev": "vite --open"
+    "dev": "vite --open",
+    "build": "vite build"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "miniFrame",
+    "reactive"
+  ],
+  "author": "bayn_web",
+  "license": "MIT",
   "dependencies": {
+    "@bayn/miniframe": "0.0.1-beta.2",
     "typescript": "^5.3.3",
     "vite": "^5.0.10"
   }

@@ -21,6 +21,7 @@
   },
   "include": [
     "lib/**/*.ts",
+    "lib/*.ts",
     "*.ts"
   ]
 }
