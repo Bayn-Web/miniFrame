@@ -1,4 +1,4 @@
-import { startEngine, html, data, createEffect, css, makeFunc } from "@bayn/miniframe"
+import { startEngine, data, createEffect, css, makeFunc } from "./lib/index"
 // Tying it all together
 
 data.color = 'blue'
@@ -8,22 +8,27 @@ createEffect(() => {
     data.textColor = data.color === 'blue' ? 'red' : 'blue'
 })
 
-startEngine(() => [html`
-    <div>
-        <div class="${data.color}">
-            color:${data.color}
-        </div>
-        <div class="${data.textColor}">
-            color:${data.textColor}
-        </div>
-        <label>
-            <div class="round">    
-            </div>
-        </label>
-        <a onclick="switchColor()">switchColor</a>
+
+makeFunc('switchColor', () => {
+    data.color = data.color == 'red' ? 'blue' : 'red';
+})
+
+
+startEngine(() => [`<div>
+<div class="$color">
+    color:$color
+</div>
+<div class="$textColor">
+    color:$textColor
+</div>
+<label>
+    <div class="round">   
+    color:$textColor 
     </div>
-    `,
-css`
+</label>
+<a click="switchColor">switchColor</a>
+</div>`,
+    css`
     .blue {
          color: ${data.color};
      }
@@ -32,17 +37,16 @@ css`
      }
      .round {
          background: radial-gradient(${data.color}, ${data.textColor});
+         display: flex;
+         justify-content: center;
+         align-items: center;
          height: 100px;
          width: 100px;
          border-radius: 50%;
+         color: white;
      }
      a{
         cursor: pointer;
      }
  `]
 )
-
-
-makeFunc('switchColor', () => {
-    data.color = data.color == 'red' ? 'blue' : 'red';
-})

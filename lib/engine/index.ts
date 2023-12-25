@@ -1,4 +1,5 @@
 import { createEffect } from "../reactive/data";
+import { htmlCompile } from "../compiler";
 
 let container: Element | undefined = undefined
 
@@ -7,15 +8,16 @@ let container: Element | undefined = undefined
  * @param render - The render function
  * @param el - The element to render to
 */
-const startEngine = (render: () => [Element, HTMLStyleElement], el?: string) => {
+const startEngine = (render: () => [string, HTMLStyleElement], el?: string) => {
     container = el ? document.querySelector(el)! : document.getElementById('container')!
     createEffect(() => {
         let dom = render()
+        let html = htmlCompile(dom[0])
         if (container!.firstElementChild) {
             container!.childNodes.forEach(child => child.remove())
-            container!.firstElementChild.replaceWith(dom[0], dom[1])
+            container!.firstElementChild.replaceWith(html, dom[1])
         } else {
-            container!.appendChild(dom[0])
+            container!.appendChild(html)
             container!.appendChild(dom[1])
         }
     })

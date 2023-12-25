@@ -4,13 +4,17 @@ let queued = false
 let currentEffect: Function | undefined = undefined;
 
 type data = {
-    [key: string]: string | number
-}
+    func: {
+        [key: string]: (this: GlobalEventHandlers, ev: MouseEvent) => any;
+    }
+} & {
+    [key: string]: string | number;
+};
 
 /**
  * @description reative data, can refresh dom.
 */
-const data: data = new Proxy({} as data, {
+const data: data = new Proxy({ func: {} } as data, {
     get(obj, prop: string) {
         onGet(prop)
         return obj[prop]
