@@ -1,5 +1,4 @@
-import { startEngine, data, createEffect, css, makeFunc } from "./lib/index"
-// Tying it all together
+import { startEngine, data, createEffect, css, makeFunc } from "@bayn/miniframe"
 
 data.color = 'blue'
 data.a = 1;
@@ -8,25 +7,25 @@ createEffect(() => {
     data.textColor = data.color === 'blue' ? 'red' : 'blue'
 })
 
-
 makeFunc('switchColor', () => {
     data.color = data.color == 'red' ? 'blue' : 'red';
 })
 
 
-startEngine(() => [`<div>
-<div class="$color">
-    color:$color
-</div>
-<div class="$textColor">
-    color:$textColor
-</div>
-<label>
-    <div class="round">   
-    color:$textColor 
+startEngine(() => [`
+<div>
+    <div class="$color">
+        color:$color
     </div>
-</label>
-<a click="switchColor">switchColor</a>
+    <div class="$textColor">
+        color:$textColor
+    </div>
+    <label>
+        <div class="round">   
+            color:$textColor 
+        </div>
+    </label>
+    <a click="switchColor">switchColor</a>
 </div>`,
     css`
     .blue {

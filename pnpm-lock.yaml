@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@bayn/miniframe':
-    specifier: 0.0.1-beta.2
-    version: 0.0.1-beta.2
+    specifier: 0.0.1-beta.3
+    version: 0.0.1-beta.3
   typescript:
     specifier: ^5.3.3
     version: 5.3.3
@@ -17,8 +17,8 @@ dependencies:
 
 packages:
 
-  /@bayn/miniframe@0.0.1-beta.2:
-    resolution: {integrity: sha512-P+vYILHHGbLLxzDGbTZGLGWsD6taTR7ZJN1036x4aLK8fsKOi0JdnmSc8cxfcgBzApDrRxGPa/3eyKs1JsdQjQ==}
+  /@bayn/miniframe@0.0.1-beta.3:
+    resolution: {integrity: sha512-a2l2iEB3TQxIHnpsr9LkuXqtfbhbZih9uhMx1diYKWpuMlsdZApqyXwxHoktvvVlJqU3aYV2FnCOIzIKTTo/rQ==}
     dependencies:
       typescript: 5.3.3
       vite: 5.0.10

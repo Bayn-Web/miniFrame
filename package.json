@@ -1,6 +1,6 @@
 {
   "name": "@bayn/miniframe",
-  "version": "0.0.1-beta.2",
+  "version": "0.0.1-beta.3",
   "repository": "https://github.com/Bayn-Web/miniFrame",
   "description": "",
   "type": "module",
@@ -17,7 +17,7 @@
   "author": "bayn_web",
   "license": "MIT",
   "dependencies": {
-    "@bayn/miniframe": "0.0.1-beta.2",
+    "@bayn/miniframe": "0.0.1-beta.3",
     "typescript": "^5.3.3",
     "vite": "^5.0.10"
   }
