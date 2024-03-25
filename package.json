@@ -1,7 +1,10 @@
 {
   "name": "@bayn/miniframe",
   "version": "0.0.1-beta.3",
-  "repository": "https://github.com/Bayn-Web/miniFrame",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Bayn-Web/miniFrame.git"
+  },
   "description": "",
   "type": "module",
   "types": "./lib/package.d.ts",
