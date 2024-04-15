@@ -3,7 +3,7 @@
   "version": "0.0.1-beta.3",
   "repository": {
     "type": "git",
-    "url": "git@github.com:Bayn-Web/miniFrame.git"
+    "url": "git@github.com:Bayn-Web/miniframe.git"
   },
   "description": "",
   "type": "module",
@@ -14,14 +14,16 @@
     "build": "vite build"
   },
   "keywords": [
-    "miniFrame",
+    "miniframe",
     "reactive"
   ],
   "author": "bayn_web",
   "license": "MIT",
   "dependencies": {
-    "@bayn/miniframe": "0.0.1-beta.3",
     "typescript": "^5.3.3",
+    "vite": "^5.0.10"
+  },
+  "devDependencies": {
     "vite": "^5.0.10"
   }
 }
