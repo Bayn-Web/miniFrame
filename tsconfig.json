@@ -23,5 +23,5 @@
     "lib/**/*.ts",
     "lib/*.ts",
     "*.ts"
-  ]
+, "example/index.ts"  ]
 }

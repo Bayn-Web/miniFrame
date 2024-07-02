@@ -5,7 +5,7 @@ export default defineConfig({
         lib: {
             entry: './lib/index.ts',
             name: 'miniFrame',
-            fileName: `miniFrame.js`,
+            fileName: `miniFrame`,
         },
     },
 });

@@ -1,16 +1,16 @@
 {
   "name": "@bayn/miniframe",
-  "version": "0.0.1-beta.3",
+  "version": "0.0.1-beta.4",
   "repository": {
     "type": "git",
     "url": "git@github.com:Bayn-Web/miniframe.git"
   },
-  "description": "",
+  "description": "the minimal reactive front-end frame by signal engine",
   "type": "module",
   "types": "./lib/package.d.ts",
   "module": "./lib/index.ts",
   "scripts": {
-    "dev": "vite --open",
+    "dev": "vite --open ./example/index.html",
     "build": "vite build"
   },
   "keywords": [

@@ -5,3 +5,11 @@ declare module '@bayn/miniframe' {
     function makeFunc(name: string, cb: clickEvent);
     const data: data;
 }
+
+type data = {
+    func: {
+        [key: string]: (this: GlobalEventHandlers, ev: MouseEvent) => any;
+    }
+} & {
+    [key: string]: string | number | Date | boolean | null | undefined | Function | (() => void);
+};

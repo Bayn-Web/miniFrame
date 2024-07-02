@@ -15,9 +15,9 @@ const startEngine = (render: () => [string, HTMLStyleElement], el?: string) => {
         let html = htmlCompile(dom[0])
         if (container!.firstElementChild) {
             container!.childNodes.forEach(child => child.remove())
-            container!.firstElementChild.replaceWith(html, dom[1])
+            container!.firstElementChild.replaceWith(html!, dom[1])
         } else {
-            container!.appendChild(html)
+            container!.appendChild(html!)
             container!.appendChild(dom[1])
         }
     })

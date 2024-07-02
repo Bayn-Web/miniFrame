@@ -2,15 +2,6 @@ const propsToEffects: any = {}
 const dirtyEffects: any = []
 let queued = false
 let currentEffect: Function | undefined = undefined;
-
-type data = {
-    func: {
-        [key: string]: (this: GlobalEventHandlers, ev: MouseEvent) => any;
-    }
-} & {
-    [key: string]: string | number;
-};
-
 /**
  * @description reative data, can refresh dom.
 */
