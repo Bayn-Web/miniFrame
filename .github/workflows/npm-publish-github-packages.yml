@@ -17,6 +17,7 @@ jobs:
       - run: npm run build
 
   publish-gpr:
+    environment: NODE_AUTH_TOKEN
     needs: build
     runs-on: ubuntu-latest
     permissions:
@@ -28,6 +29,6 @@ jobs:
         with:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
-      - run: npm publish
+      - run: npm publish --token ${{secrets.NODE_TOKEN}}
         env:
           NODE_AUTH_TOKEN: ${{secrets.TOKEN}}
