@@ -5,6 +5,9 @@
     "type": "git",
     "url": "git@github.com:Bayn-Web/miniframe.git"
   },
+  "publishConfig": {
+    "@bayn:registry": "https://npm.pkg.github.com"
+  },
   "description": "the minimal reactive front-end frame by signal engine",
   "type": "module",
   "types": "./lib/package.d.ts",
