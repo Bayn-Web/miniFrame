@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Bayn-Web/miniFrame.git"
+    "url": "git+https://github.com/Bayn-Web/miniframe.git"
   },
   "publishConfig": {
     "@Bayn-Web:registry": "https://npm.pkg.github.com"
