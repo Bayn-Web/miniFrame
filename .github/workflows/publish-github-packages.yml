@@ -12,9 +12,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      package-registry: write
-      package-registry: read
-      content-references: write
       contents: write
       contents: read
       packages: write
